@@ -16,12 +16,7 @@ import dimod
 from minorminer import find_embedding
 from dwave.system.samplers import DWaveSampler
 from pyqubo import Array
-import networkx as nx
-import dwave_networkx as dnx
-import matplotlib
-from matplotlib import pyplot as plt
 import sys
-
 
 # Graph partitioning as full mesh
 gamma = 3
@@ -35,30 +30,12 @@ for i in range(N):
     for j in range(i + 1, N):
         H += (x[i] - x[j]) ** 2
 
-chainstrength = 5
-numruns = 100
-
 # Compile the model, and turn it into a QUBO object
 model = H.compile()
 Q, offset = model.to_qubo()
-bqm = dimod.BinaryQuadraticModel.from_qubo(Q, offset=offset)
-
-# Need to relabel variables for the first figure
-bqm2 = bqm.relabel_variables({curr: v for v, curr in enumerate(bqm.variables)}, inplace=False)
 
 # Do the embedding
 dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'chimera'})
 A = dwave_sampler.edgelist
 embedding = find_embedding(Q, A)
-
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 6))
-
-# Draw the QUBO as a networkx graph
-G = bqm2.to_networkx_graph()
-pos = nx.spring_layout(G)
-nx.draw_networkx(G, pos=pos, font_size=10, node_size=100, node_color='cyan', ax=axes[0])
-
-# Draw the embedded graph
-G = dnx.chimera_graph(16, 16, 4)
-dnx.draw_chimera_embedding(G, embedding, embedded_graph=bqm.to_networkx_graph(), unused_color=None, ax=axes[1])
-plt.show()
+print(embedding)

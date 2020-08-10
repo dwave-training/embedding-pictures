@@ -28,7 +28,7 @@ bqm = dimod.BinaryQuadraticModel.from_qubo(Q, offset=offset)
 chainstrength = 1.01
 numruns = 100
 
-dwave_sampler = DWaveSampler()
+dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'chimera'})
 A = dwave_sampler.edgelist
 Adj = dwave_sampler.adjacency
 embedding = find_embedding(Q, A)
