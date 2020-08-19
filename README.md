@@ -1,6 +1,6 @@
 # Embedding Pictures
 
-This exercise contains five small programs which illustrate embedding topics
+This exercise contains six small programs which illustrate embedding topics
 in Ocean and on the D-Wave QPUs, for Training features.
 
 ## Exercise 1
@@ -68,6 +68,20 @@ If you're running in the Leap IDE, open a Terminal, and then run this command.
 
 The program will produce a picture with a left and right side. The left side
 is an 8-clique and the right picture is an example Chimera clique embedding,
+using the 2015 clique embedding algorithm, of an 8-clique.
+
+## Exercise 6
+
+To run the demo, at the command line, type:
+
+```bash
+python clique_embedding_pegasus.py 8
+```
+
+If you're running in the Leap IDE, open a Terminal, and then run this command.
+
+The program will produce a picture with a left and right side. The left side
+is an 8-clique and the right picture is an example Pegasus clique embedding,
 using the 2015 clique embedding algorithm, of an 8-clique.
 
 ## License
