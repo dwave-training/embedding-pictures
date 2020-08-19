@@ -17,8 +17,10 @@ from dwave.system.samplers import DWaveSampler
 import matplotlib.pyplot as plt
 import networkx as nx
 import dwave_networkx as dnx
+import sys
 
-G = nx.complete_graph(8)
+N = int(sys.argv[1])
+G = nx.complete_graph(N)
 
 # Do the embedding
 dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'chimera'})
