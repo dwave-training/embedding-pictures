@@ -12,30 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import dimod
 from minorminer import find_embedding
 from dwave.system.samplers import DWaveSampler
-from pyqubo import Array
+import networkx as nx
 import sys
 
-# Graph partitioning as full mesh
-gamma = 3
 N = int(sys.argv[1])
-
-# Set up variables
-x = Array.create('x', shape=N, vartype='BINARY')
-
-H = gamma * (sum(x) - (N/2)) ** 2
-for i in range(N):
-    for j in range(i + 1, N):
-        H += (x[i] - x[j]) ** 2
-
-# Compile the model, and turn it into a QUBO object
-model = H.compile()
-Q, offset = model.to_qubo()
+G = nx.complete_graph(N)
 
 # Do the embedding
 dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'chimera'})
 A = dwave_sampler.edgelist
-embedding = find_embedding(Q, A)
+embedding = find_embedding(G, A)
 print(embedding)
