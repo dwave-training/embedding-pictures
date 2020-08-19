@@ -1,9 +1,10 @@
-from minorminer.busclique import find_clique_embedding
-from dwave.system.samplers import DWaveSampler
+import sys
 import matplotlib.pyplot as plt
 import networkx as nx
 import dwave_networkx as dnx
-import sys
+from minorminer.busclique import find_clique_embedding
+from dwave.system.samplers import DWaveSampler
+
 N = int(sys.argv[1])
 G = nx.complete_graph(N)
 

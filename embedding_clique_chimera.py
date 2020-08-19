@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from minorminer import find_embedding
-from dwave.system.samplers import DWaveSampler
+import sys
 import matplotlib.pyplot as plt
 import networkx as nx
 import dwave_networkx as dnx
-import sys
+from minorminer import find_embedding
+from dwave.system.samplers import DWaveSampler
 
 N = int(sys.argv[1])
 G = nx.complete_graph(N)
