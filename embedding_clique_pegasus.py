@@ -36,4 +36,4 @@ nx.draw_networkx(G, pos=pos, font_size=10, node_size=100, node_color='cyan', ax=
 # Draw the embedded graph
 pegasus_graph = dnx.pegasus_graph(16)
 dnx.draw_pegasus_embedding(pegasus_graph, embedding, embedded_graph=G, unused_color=None, ax=axes[1])
-plt.show()
+plt.savefig('embedding_clique_pegasus')

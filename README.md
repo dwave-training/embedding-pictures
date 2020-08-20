@@ -14,7 +14,9 @@ python embedding_clique_chimera.py 8
 
 If you're running in the Leap IDE, open a Terminal, and then run this command.
 
-The program will produce a picture with a left and right side. The left side
+The program will produce a file ```embedding_clique_chimera.png``` in your
+working directory. 
+This file contains a picture with a left and right side. The left side
 is an 8-clique and the right picture is an example Chimera embedding of an
 8-clique.
 
@@ -28,7 +30,9 @@ python embedding_clique_pegasus.py 8
 
 If you're running in the Leap IDE, open a Terminal, and then run this command.
 
-The program will produce a picture with a left and right side. The left side
+The program will produce a file ```embedding_clique_pegasus.png``` in your
+working directory. 
+The file contains a picture with a left and right side. The left side
 is an 8-clique and the right picture is an example Pegasus embedding of an
 8-clique.
 
@@ -66,7 +70,9 @@ python clique_embedding_chimera.py 8
 
 If you're running in the Leap IDE, open a Terminal, and then run this command.
 
-The program will produce a picture with a left and right side. The left side
+The program will produce a file ```clique_embedding_chimera.png``` in your
+working directory. 
+This file contains a picture with a left and right side. The left side
 is an 8-clique and the right picture is an example Chimera clique embedding,
 using the 2015 clique embedding algorithm, of an 8-clique.
 
@@ -80,7 +86,9 @@ python clique_embedding_pegasus.py 8
 
 If you're running in the Leap IDE, open a Terminal, and then run this command.
 
-The program will produce a picture with a left and right side. The left side
+The program will produce a file ```clique_embedding_pegasus.png``` in your
+working directory. 
+This file contains a picture with a left and right side. The left side
 is an 8-clique and the right picture is an example Pegasus clique embedding,
 using the 2015 clique embedding algorithm, of an 8-clique.
 

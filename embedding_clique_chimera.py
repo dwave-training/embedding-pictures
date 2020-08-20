@@ -36,4 +36,4 @@ nx.draw_networkx(G, pos=pos, font_size=10, node_size=100, node_color='cyan', ax=
 # Draw the embedded graph
 chimera_graph = dnx.chimera_graph(16, 16, 4)
 dnx.draw_chimera_embedding(chimera_graph, embedding, embedded_graph=G, unused_color=None, ax=axes[1])
-plt.show()
+plt.savefig('embedding_clique_chimera')

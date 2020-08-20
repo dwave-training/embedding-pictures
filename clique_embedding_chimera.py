@@ -20,4 +20,4 @@ A = dwave_sampler.edgelist
 chimera_graph = dnx.chimera_graph(16, edge_list=A)
 clique_embedding = find_clique_embedding(8, chimera_graph)
 dnx.draw_chimera_embedding(chimera_graph, clique_embedding, embedded_graph=G, unused_color=None, ax=axes[1])
-plt.show()
+plt.savefig('clique_embedding_chimera')
