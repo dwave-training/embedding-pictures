@@ -44,5 +44,12 @@ dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'chimera'})
 A = dwave_sampler.edgelist
 chimera_graph = dnx.chimera_graph(16, edge_list=A)
 clique_embedding = find_clique_embedding(N, chimera_graph)
+
+qubits = 0
+for var,chain in clique_embedding.items():
+    qubits += len(chain)
+
+print("\nEmbedding for", N, "clique found using", qubits, "qubits.")
+
 dnx.draw_chimera_embedding(chimera_graph, clique_embedding, embedded_graph=G, chain_color=chain_color_list, unused_color=None, ax=axes[1])
 plt.savefig('clique_embedding_chimera')

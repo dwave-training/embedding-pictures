@@ -43,5 +43,12 @@ dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'pegasus'})
 A = dwave_sampler.edgelist
 pegasus_graph = dnx.pegasus_graph(16, edge_list=A)
 clique_embedding = find_clique_embedding(N, pegasus_graph)
+
+qubits = 0
+for var,chain in clique_embedding.items():
+    qubits += len(chain)
+
+print("\nEmbedding for", N, "clique found using", qubits, "qubits.")
+
 dnx.draw_pegasus_embedding(pegasus_graph, clique_embedding, embedded_graph=G, chain_color=chain_color_list, unused_color=None, ax=axes[1])
 plt.savefig('clique_embedding_pegasus')
