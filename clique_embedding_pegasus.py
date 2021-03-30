@@ -14,7 +14,7 @@
 import sys
 from random import random
 
-import matplotlib.pyplot as plt
+import matplotlib
 import networkx as nx
 import dwave_networkx as dnx
 from minorminer.busclique import find_clique_embedding

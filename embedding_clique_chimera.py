@@ -15,7 +15,7 @@
 import sys
 from random import random
 
-import matplotlib.pyplot as plt
+import matplotlib
 import networkx as nx
 import dwave_networkx as dnx
 from minorminer import find_embedding
