@@ -31,6 +31,6 @@ nx.draw_networkx(G, pos=pos, font_size=10, node_size=100, node_color='cyan', ax=
 dwave_sampler = DWaveSampler(solver={'topology__type__eq': 'pegasus'})
 A = dwave_sampler.edgelist
 pegasus_graph = dnx.pegasus_graph(16, edge_list=A)
-clique_embedding = find_clique_embedding(8, pegasus_graph)
+clique_embedding = find_clique_embedding(N, pegasus_graph)
 dnx.draw_pegasus_embedding(pegasus_graph, clique_embedding, embedded_graph=G, unused_color=None, ax=axes[1])
 plt.savefig('clique_embedding_pegasus')
