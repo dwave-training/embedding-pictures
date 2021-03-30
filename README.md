@@ -63,7 +63,7 @@ The program will print out how many qubits were required for the embedding and
 produce an image file ```clique_embedding_chimera.png``` in your working
 directory. This file contains a picture with a left and right side. The left
 side of the image is an 8-clique and the right is an example Chimera embedding,
-using the 2015 clique embedding algorithm, of an 8-clique.
+using the 2014 clique embedding algorithm, of an 8-clique.
 
 ## Exercise 6
 
@@ -77,7 +77,12 @@ The program will print out how many qubits were required for the embedding and
 produce an image file ```clique_embedding_pegasus.png``` in your working
 directory. This file contains a picture with a left and right side. The left
 side of the image is an 8-clique and the right is an example Pegasus embedding,
-using the 2015 clique embedding algorithm, of an 8-clique.
+using the 2014 clique embedding algorithm, of an 8-clique.
+
+## References
+
+[1] Cai, Jun, William G. Macready, and Aidan Roy. "A practical heuristic for
+finding graph minors." arXiv preprint arXiv:1406.2741 (2014).
 
 ## License
 
