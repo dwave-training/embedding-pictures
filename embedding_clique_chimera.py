@@ -36,7 +36,7 @@ A = dwave_sampler.edgelist
 embedding = find_embedding(G, A)
 
 qubits = 0
-for var,chain in embedding.items():
+for chain in embedding.values():
     qubits += len(chain)
 
 print("\nEmbedding for", N, "clique found using", qubits, "qubits.")
