@@ -46,7 +46,7 @@ chimera_graph = dnx.chimera_graph(16, edge_list=A)
 clique_embedding = find_clique_embedding(N, chimera_graph)
 
 qubits = 0
-for var,chain in clique_embedding.items():
+for chain in clique_embedding.values():
     qubits += len(chain)
 
 print("\nEmbedding for", N, "clique found using", qubits, "qubits.")
